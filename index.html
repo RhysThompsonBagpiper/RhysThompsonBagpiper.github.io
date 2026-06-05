@@ -20,13 +20,22 @@
         input, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
         footer { background: #1a2a3a; color: white; padding: 20px; font-size: 0.9em; margin-top: 60px; }
         footer a { color: #b3c6ff; text-decoration: none; margin: 0 10px; }
+		/* Slideshow container */
+.slideshow-container { max-width: 600px; position: relative; margin: 20px auto; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.mySlides { display: none; }
+.mySlides img { width: 100%; height: auto; display: block; object-fit: cover; }
+/* Next & previous buttons */
+.prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none; background-color: rgba(0,0,0,0.3); }
+.prev { left: 0; }
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+
     </style>
 </head>
 <body>
 
     <header>
         <h1>Rhys Thompson Bagpiper</h1>
-        <p>Professional Solo Bagpiper based in Gloucestershire</p>
     </header>
 
     <div class="container">
@@ -36,6 +45,34 @@
             <h2>Available for Weddings, Funerals, and Corporate Events</h2>
             <p>Bringing powerful, traditional pipe music to your special occasions across Gloucestershire and the surrounding counties. Impeccable dress, reliable service, and competitive rates.</p>
         </div>
+
+<!-- Gallery Section -->
+<div class="section">
+    <h2>Gallery</h2>
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="mySlides">
+            <img src="Rhys Piper 1.png" alt="Rhys Thompson Bagpiper in Uniform">
+        </div>
+        <!-- Slide 2 -->
+        <div class="mySlides">
+            <img src="Rhys Piper 2.png" alt="Rhys Thompson Bagpiper Event Performance">
+        </div>
+		 <!-- Slide 3 -->
+        <div class="mySlides">
+            <img src="Rhys Piper 3.png" alt="Rhys Thompson Bagpiper in Uniform">
+        </div>
+		 <!-- Slide 4 -->
+        <div class="mySlides">
+            <img src="Rhys Piper 4.png" alt="Rhys Thompson Bagpiper in Uniform">
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+
 
         <!-- Video Performances (YouTube Embeds) -->
         <div class="section">
@@ -74,6 +111,25 @@
             <a href="mailto:rhysthompsonbagpiper@gmail.com">Email Me</a>
         </p>
     </footer>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
 
 </body>
 </html>
